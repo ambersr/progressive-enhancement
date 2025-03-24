@@ -8,6 +8,37 @@
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
 		rel="stylesheet">
 	<link href="assets/styles.css" rel="stylesheet">
+	<style>
+		.star-rating {
+			display: inline-block;
+			direction: rtl;
+			/* Zodat je van rechts naar links klikt */
+		}
+
+		.star-rating input {
+			display: none;
+		}
+
+		.star-rating label {
+			font-size: 40px;
+			display: inline-block;
+			width: 40px;
+			height: 40px;
+			background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="%23E0E0E0" d="M32 12.408l-11.056-1.607-4.944-10.018-4.944 10.018-11.056 1.607 8 7.798-1.889 11.011 9.889-5.199 9.889 5.199-1.889-11.011 8-7.798z"></path></svg>');
+			background-size: contain;
+			cursor: pointer;
+		}
+
+		.star-rating input:checked~label {
+			background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="%23FFCC00" d="M32 12.408l-11.056-1.607-4.944-10.018-4.944 10.018-11.056 1.607 8 7.798-1.889 11.011 9.889-5.199 9.889 5.199-1.889-11.011 8-7.798z"></path></svg>');
+		}
+
+		/* Hover-effect voor de sterren */
+		.star-rating label:hover,
+		.star-rating label:hover~label {
+			background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="%23FFCC00" d="M32 12.408l-11.056-1.607-4.944-10.018-4.944 10.018-11.056 1.607 8 7.798-1.889 11.011 9.889-5.199 9.889 5.199-1.889-11.011 8-7.798z"></path></svg>');
+		}
+	</style>
 </head>
 
 <body>
