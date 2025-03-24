@@ -1,3 +1,45 @@
 <!doctype html>
 <html lang="nl">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Rating / Progressive Enhancement / FDND</title>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+		rel="stylesheet">
+	<link href="assets/styles.css" rel="stylesheet">
+</head>
+
+<body>
+	<h1>Rating</h1>
+
+	<form method="post">
+
+		<div class="star-rating">
+			<input type="radio" id="star5" name="rating" value="5" required>
+			<label for="star5"></label>
+
+			<input type="radio" id="star4" name="rating" value="4" required>
+			<label for="star4"></label>
+
+			<input type="radio" id="star3" name="rating" value="3" required>
+			<label for="star3"></label>
+
+			<input type="radio" id="star2" name="rating" value="2" required>
+			<label for="star2"></label>
+
+			<input type="radio" id="star1" name="rating" value="1" required>
+			<label for="star1"></label>
+		</div>
+
+	</form>
+
+	<details open>
+		<summary>Demo video</summary>
+		<video src="assets/rating.mp4" width="271" height="110" controls muted autoplay loop>
+			<a href="assets/rating.mp4">assets/rating.mp4</a>
+		</video>
+	</details>
+</body>
+
 </html>
