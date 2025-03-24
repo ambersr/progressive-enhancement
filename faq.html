@@ -47,6 +47,75 @@
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
 		rel="stylesheet">
 	<link href="assets/styles.css" rel="stylesheet">
+	<style>
+
+		h1 {
+			padding-bottom: 1em;
+		}
+
+			.faq {
+				padding: 0em 0em 1em 0em;
+				summary {
+					display: inline-flex;
+					padding: .5em 1em;
+					background-color: #ffffff;
+					border: 1px solid #050542;
+					border-radius: .5em;
+					position: relative;
+					list-style: none;
+					cursor: pointer;
+					align-items: center;
+				}
+
+				summary::before {
+					content: "×";
+					font-size: 1.7em;
+					margin-right: 10px;
+					transition: transform 0.3s ease, content 0.3s ease;
+					display: inline-block;
+				}
+
+				/* Wanneer open, marker roteren naar een kruisje */
+				&:open>summary::before {
+					transform: rotate(45deg);
+				}
+
+				/* Openen van details: verander de achtergrondkleur */
+				&:open>summary {
+					background-color: #a676f5;
+					border: none;
+					border-radius: .5em .5em 0em 0em;
+				}
+
+				p {
+					background-color: #a676f5;
+					margin: 0;
+					padding: 1em;
+					border-radius: 0em .5em .5em .5em;
+				}
+
+				/* Stijlen voor de tweede FAQ */
+				&:nth-of-type(2) {
+
+					p,
+					&:open>summary {
+						background-color: #67e5bf;
+						/* Groene tint */
+					}
+				}
+
+				/* Stijlen voor de derde FAQ */
+				&:nth-of-type(3) {
+
+					p,
+					&:open>summary {
+						background-color: #fefc86;
+						/* Gele tint */
+					}
+				}
+			}
+		/* Hint: Denk aan de states van het component; deze kan open en dicht zijn */
+	</style>
 </head>
 
 <body>
