@@ -9,13 +9,14 @@
 		rel="stylesheet">
 	<link href="assets/styles.css" rel="stylesheet">
 	<style>
-		.star-rating {
+		.rating {
 			display: flex;
 			flex-direction: row;
 			justify-content: left;
 		}
 
-		.star-rating input {
+		/* De sterretjes zijn standaard leeg (met alleen een border) */
+		.rating input {
 			appearance: none;
 			-webkit-appearance: none;
 			width: 40px;
@@ -26,16 +27,22 @@
 			margin: 0 2px;
 		}
 
-		/* Geselecteerde ster en alle voorgaande sterren */
-		.star-rating input:checked,
-		.star-rating input:checked~input {
+		/* Zodra het label een input heeft die geselecteerd is maak dan de ster volledig */
+		.rating input:checked,
+		label:has(~ label input:checked) input {
 			background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path stroke="%2367e5bf" stroke-width="2" fill="%2367e5bf" d="M32 12.408L20.944 10.801 16 0.783 11.056 10.801 0 12.408l8 7.798-1.889 11.011L16 26.018l9.889 5.199L24 20.206l8-7.798z"></path></svg>');
 		}
 
-		/* Hover effect: Verander sterren bij hover over een input */
-		.star-rating input:hover,
-		.star-rating input:hover~input {
+		/* Zodra de label een input heeft waar overheen gehovered wordt, maak dan de ster volledig */
+		.rating input:hover,
+		label:has(~ label input:hover) input {
 			background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path stroke="%2367e5bf" stroke-width="2" fill="%2367e5bf" d="M32 12.408L20.944 10.801 16 0.783 11.056 10.801 0 12.408l8 7.798-1.889 11.011L16 26.018l9.889 5.199L24 20.206l8-7.798z"></path></svg>');
+		}
+
+		/* Zorg ervoor dat als de styling aanstaat de labels van de sterren verdwijenen */
+		label span {
+			position: absolute;
+			left: -9999em;
 		}
 	</style>
 </head>
@@ -43,14 +50,12 @@
 <body>
 	<h1>Rating</h1>
 
-	<form method="post">
-		<div class="star-rating">
-			<input type="radio" id="star1" name="rating" value="1" required>
-			<input type="radio" id="star2" name="rating" value="2" required>
-			<input type="radio" id="star3" name="rating" value="3" required>
-			<input type="radio" id="star4" name="rating" value="4" required>
-			<input type="radio" id="star5" name="rating" value="5" required>
-		</div>
+	<form class="rating" method="post">
+		<label><input type="radio" name="rating" value="1"><span>1 ster</span></label>
+		<label><input type="radio" name="rating" value="2"><span>2 sterren</span></label>
+		<label><input type="radio" name="rating" value="3"><span>3 sterren</span></label>
+		<label><input type="radio" name="rating" value="4"><span>4 sterren</span></label>
+		<label><input type="radio" name="rating" value="5"><span>5 sterren</span></label>
 	</form>
 
 	<details open>
