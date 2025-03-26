@@ -9,60 +9,44 @@
 		rel="stylesheet">
 	<link href="assets/styles.css" rel="stylesheet">
 	<style>
-		.switch {
+		/* De switch element */
+		.switcher {
+			appearance: none;
+			-webkit-appearance: none;
+			width: 6em;
+			height: 3em;
+			background-color: #a9a9a9;
+			border-radius: 50px;
 			position: relative;
-			display: inline-block;
-			width: 5em;
+			cursor: pointer;
+		}
+
+		/* De witte stip */
+		.switcher::after {
+			content: "";
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 2.5em;
 			height: 2.5em;
+			background: white;
+			position: absolute;
+			top: .25em;
+			left: .3em;
+			border-radius: 50%;
+			transition: 0.3s;
+			box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+		}
 
-			input {
-				opacity: 0;
-				width: 0;
-				height: 0;
-			}
+		/* Wanneer de switcher aan staat verander dan de background-color */
+		.switcher:checked {
+			background-color: #67e5bf;
+		}
 
-			.slider {
-				position: absolute;
-				cursor: pointer;
-				top: 0;
-				left: 0;
-				right: 0;
-				bottom: 0;
-				background-color: #a9a9a9;
-				transition: 0.4s;
-				border-radius: 34px;
-
-				&:before {
-					content: "";
-					position: absolute;
-					height: 2.2em;
-					width: 2.2em;
-					left: 4px;
-					bottom: 4px;
-					background-color: white;
-					font-size: 0.9em;
-					display: flex;
-					align-items: center;
-					justify-content: center;
-					transition: 0.4s;
-					border-radius: 50%;
-				}
-			}
-
-			/* Checked state */
-			input:checked+.slider {
-				background-color: #67e5bf;
-
-				&:before {
-					transform: translateX(2.8em);
-					content: 'aan';
-				}
-			}
-
-			/* Focus visible on the switch when it's tabbed */
-			input:focus+.slider {
-				box-shadow: 0 0 0 3px #67e5bf;
-			}
+		/* Wanneer de switcher aan staat verplaats dan de witte stip */
+		.switcher:checked::after {
+			left: 3.1em;
+			content: "aan";
 		}
 	</style>
 </head>
@@ -70,14 +54,7 @@
 <body>
 	<h1>Switch control</h1>
 
-	<label class="switch">
-		<input type="checkbox" tabindex="0">
-		<span class="slider round"></span>
-	</label>
-
-
-	<!-- Hint: Safari heeft hiervoor iets bedacht, maar is dat al een standaard?
-		     Wat gebeurt er in browsers die dat nog niet ondersteunen? -->
+	<input type="checkbox" switch class="switcher">
 
 	<details open>
 		<summary>Demo video</summary>
