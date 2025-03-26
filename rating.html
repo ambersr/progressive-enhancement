@@ -24,19 +24,15 @@
 			display: inline-block;
 			width: 40px;
 			height: 40px;
-			background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="%23E0E0E0" d="M32 12.408l-11.056-1.607-4.944-10.018-4.944 10.018-11.056 1.607 8 7.798-1.889 11.011 9.889-5.199 9.889 5.199-1.889-11.011 8-7.798z"></path></svg>');
 			background-size: contain;
 			cursor: pointer;
+			background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path stroke="%2367e5bf" stroke-width="2" fill="%23ffffff" d="M32 12.408L20.944 10.801 16 0.783 11.056 10.801 0 12.408l8 7.798-1.889 11.011L16 26.018l9.889 5.199L24 20.206l8-7.798z"></path></svg>');
 		}
 
-		.star-rating input:checked~label {
-			background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="%23FFCC00" d="M32 12.408l-11.056-1.607-4.944-10.018-4.944 10.018-11.056 1.607 8 7.798-1.889 11.011 9.889-5.199 9.889 5.199-1.889-11.011 8-7.798z"></path></svg>');
-		}
-
-		/* Hover-effect voor de sterren */
+		.star-rating input:checked~label,
 		.star-rating label:hover,
 		.star-rating label:hover~label {
-			background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="%23FFCC00" d="M32 12.408l-11.056-1.607-4.944-10.018-4.944 10.018-11.056 1.607 8 7.798-1.889 11.011 9.889-5.199 9.889 5.199-1.889-11.011 8-7.798z"></path></svg>');
+			background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path stroke="%2367e5bf" stroke-width="2" fill="%2367e5bf" d="M32 12.408L20.944 10.801 16 0.783 11.056 10.801 0 12.408l8 7.798-1.889 11.011L16 26.018l9.889 5.199L24 20.206l8-7.798z"></path></svg>');
 		}
 	</style>
 </head>
@@ -48,16 +44,16 @@
 
 		<div class="star-rating">
 			<input type="radio" id="star5" name="rating" value="5" required>
-			<label for="star5"></label>
+			<label for="star5" tabindex="0"></label>
 
 			<input type="radio" id="star4" name="rating" value="4" required>
-			<label for="star4"></label>
+			<label for="star4" tabindex="0"></label>
 
 			<input type="radio" id="star3" name="rating" value="3" required>
-			<label for="star3"></label>
+			<label for="star3" tabindex="0"></label>
 
 			<input type="radio" id="star2" name="rating" value="2" required>
-			<label for="star2"></label>
+			<label for="star2" tabindex="0"></label>
 
 			<input type="radio" id="star1" name="rating" value="1" required>
 			<label for="star1"></label>
