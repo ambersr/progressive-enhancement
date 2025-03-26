@@ -59,11 +59,9 @@
 				}
 			}
 
-			/* Fallback voor oudere browsers */
-			@supports not (transform: translateX(1px)) {
-				input:checked+.slider:before {
-					left: 50%;
-				}
+			/* Focus visible on the switch when it's tabbed */
+			input:focus+.slider {
+				box-shadow: 0 0 0 3px #67e5bf;
 			}
 		}
 	</style>
@@ -73,7 +71,7 @@
 	<h1>Switch control</h1>
 
 	<label class="switch">
-		<input type="checkbox">
+		<input type="checkbox" tabindex="0">
 		<span class="slider round"></span>
 	</label>
 
