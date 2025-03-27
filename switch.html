@@ -9,20 +9,19 @@
 		rel="stylesheet">
 	<link href="assets/styles.css" rel="stylesheet">
 	<style>
-		/* De switch element */
 		.switcher {
 			appearance: none;
-			-webkit-appearance: none;
 			width: 6em;
 			height: 3em;
 			background-color: #a9a9a9;
 			border-radius: 50px;
+			display: inline-grid;
 			position: relative;
 			cursor: pointer;
 		}
 
 		/* De witte stip */
-		.switcher::after {
+		.switcher::before {
 			content: "";
 			display: flex;
 			align-items: center;
@@ -44,9 +43,48 @@
 		}
 
 		/* Wanneer de switcher aan staat verplaats dan de witte stip */
-		.switcher:checked::after {
+		.switcher:checked::before {
 			left: 3.1em;
 			content: "aan";
+		}
+
+		.switcher::thumb {
+			width: 2.5em;
+			height: 2.5em;
+			background: white;
+			position: absolute;
+			top: .25em;
+			left: .3em;
+			border-radius: 50%;
+			transition: 0.3s;
+			box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+		}
+
+		.switcher:checked::thumb {
+			translate: 2.8em 0;
+			content: "aan";
+		}
+
+		.switcher::thumb,
+		.switcher::track {
+			grid-area: 1/1;
+		}
+
+		@supports selector(::thumb) {
+			.switcher:not(:checked)::before {
+				content: "uit";
+				right: .3em;
+				left: unset;
+				background-color: unset;
+				box-shadow: unset;
+			}
+
+			.switcher:checked::before {
+			content: "aan";
+			left: .3em;
+			background-color: unset;
+			box-shadow: unset;
+			}
 		}
 	</style>
 </head>
