@@ -36,9 +36,15 @@
 			background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path stroke="%2367e5bf" stroke-width="2" fill="%2367e5bf" d="M32 12.408L20.944 10.801 16 0.783 11.056 10.801 0 12.408l8 7.798-1.889 11.011L16 26.018l9.889 5.199L24 20.206l8-7.798z"></path></svg>');
 		}
 
+		label {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+		}
+
 		label span {
-			position: absolute;
-			left: -9999em;
+			position: unset;
+			left: unset;
 		}
 
 		@supports selector(:has(a)) {
