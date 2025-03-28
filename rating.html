@@ -18,31 +18,61 @@
 		/* De sterretjes zijn standaard leeg (met alleen een border) */
 		.rating input {
 			appearance: none;
-			-webkit-appearance: none;
 			width: 40px;
 			height: 40px;
 			background-size: contain;
 			cursor: pointer;
 			background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path stroke="%2367e5bf" stroke-width="2" fill="%23ffffff" d="M32 12.408L20.944 10.801 16 0.783 11.056 10.801 0 12.408l8 7.798-1.889 11.011L16 26.018l9.889 5.199L24 20.206l8-7.798z"></path></svg>');
-			margin: 0 2px;
+			margin: 0 2dpx;
 		}
 
 		/* Zodra het label een input heeft die geselecteerd is maak dan de ster volledig */
-		.rating input:checked,
-		label:has(~ label input:checked) input {
+		.rating input:checked {
 			background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path stroke="%2367e5bf" stroke-width="2" fill="%2367e5bf" d="M32 12.408L20.944 10.801 16 0.783 11.056 10.801 0 12.408l8 7.798-1.889 11.011L16 26.018l9.889 5.199L24 20.206l8-7.798z"></path></svg>');
 		}
 
 		/* Zodra de label een input heeft waar overheen gehovered wordt, maak dan de ster volledig */
-		.rating input:hover,
-		label:has(~ label input:hover) input {
+		.rating input:hover {
 			background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path stroke="%2367e5bf" stroke-width="2" fill="%2367e5bf" d="M32 12.408L20.944 10.801 16 0.783 11.056 10.801 0 12.408l8 7.798-1.889 11.011L16 26.018l9.889 5.199L24 20.206l8-7.798z"></path></svg>');
 		}
 
-		/* Zorg ervoor dat als de styling aanstaat de labels van de sterren verdwijenen */
 		label span {
 			position: absolute;
 			left: -9999em;
+		}
+
+		@supports selector(:has(a)) {
+			.rating {
+				display: flex;
+				flex-direction: row;
+				justify-content: left;
+			}
+
+			.rating input {
+				appearance: none;
+				width: 40px;
+				height: 40px;
+				background-size: contain;
+				cursor: pointer;
+				background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path stroke="%2367e5bf" stroke-width="2" fill="%23ffffff" d="M32 12.408L20.944 10.801 16 0.783 11.056 10.801 0 12.408l8 7.798-1.889 11.011L16 26.018l9.889 5.199L24 20.206l8-7.798z"></path></svg>');
+				margin: 0 2dpx;
+			}
+
+			.rating input:checked,
+			label:has(~ label input:checked) input {
+				background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path stroke="%2367e5bf" stroke-width="2" fill="%2367e5bf" d="M32 12.408L20.944 10.801 16 0.783 11.056 10.801 0 12.408l8 7.798-1.889 11.011L16 26.018l9.889 5.199L24 20.206l8-7.798z"></path></svg>');
+			}
+
+			.rating input:hover,
+			label:has(~ label input:hover) input {
+				background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path stroke="%2367e5bf" stroke-width="2" fill="%2367e5bf" d="M32 12.408L20.944 10.801 16 0.783 11.056 10.801 0 12.408l8 7.798-1.889 11.011L16 26.018l9.889 5.199L24 20.206l8-7.798z"></path></svg>');
+			}
+
+			label span {
+				position: absolute;
+				left: -9999em;
+			}
+
 		}
 	</style>
 </head>
