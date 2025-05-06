@@ -1,17 +1,55 @@
 <!doctype html>
 <html lang="nl">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width">
-		<title>File upload met preview / Progressive Enhancement / FDND</title>
-		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-		<link href="assets/styles.css" rel="stylesheet">
-		<style>
-			/* Schrijf hier gewoon je CSS voor dit component */
 
-			/* Hint: Denk niet te ingewikkeld */
-		</style>
-		<script type="module">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>File upload met preview / Progressive Enhancement / FDND</title>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+		rel="stylesheet">
+	<link href="assets/styles.css" rel="stylesheet">
+	<style>
+		/* Schrijf hier gewoon je CSS voor dit component */
+
+		form {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 50%;
+			gap: 1em;
+		}
+
+		#fileUpload {
+			width: 100%;
+			height: 20em;
+			background-color: #68e4bf;
+			background-position: cover;
+			background-position: center;
+			border: 2px solid #050542;
+			border-radius: 1em;
+			color: #00000000;
+
+			&::file-selector-button {
+				display: none;
+			}
+		}
+
+		label {
+			position: absolute;
+			top: 7.5em;
+			font-weight: bold;
+
+		}
+
+		button {
+			align-self: baseline;
+		}
+
+
+
+		/* Hint: Denk niet te ingewikkeld */
+	</style>
 			/* Schrijf hier eventueel je client-side JavaScript */
 			
 			/* Hint: Met een paar regels kom je al een heel eind */
