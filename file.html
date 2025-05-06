@@ -50,6 +50,19 @@
 
 		/* Hint: Denk niet te ingewikkeld */
 	</style>
+	<script type="module">
+			// Selecteer het input element
+			const fileUpload = document.querySelector('#fileUpload');
+
+			fileUpload.addEventListener("change", handleFiles, false);
+
+			function handleFiles() { // Functie die wordt uitgevoerd wanneer een bestand wordt gekozen
+				 const file = this.files[0]; // Haal het eerste geselecteerd bestand op
+				 const fileURL = URL.createObjectURL(file); // Maak een url van het gekozen bestand
+
+				  fileUpload.style.backgroundImage = `url(${fileURL})`; // Verander achtergrond van de input in de gekozen afbeelding
+			}
+
 			/* Schrijf hier eventueel je client-side JavaScript */
 			
 			/* Hint: Met een paar regels kom je al een heel eind */
