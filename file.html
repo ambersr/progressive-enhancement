@@ -24,25 +24,25 @@
 			/* Hint: Via JS kun je Custom Properties in CSS aanpassen
 			   https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/setProperty */
 		</script>
-	</head>
-	<body>
-		<h1>File upload met preview</h1>
+</head>
 
-		<!-- Voor het uploaden van een bestand heb je altijd een formulier nodig.
+<body>
+	<h1>File upload met preview</h1>
+
+	<!-- Voor het uploaden van een bestand heb je altijd een formulier nodig.
 		     Dus die krijg je alvast. Maak je over de server niet druk; het gaat om de UI. -->
-		<form method="post">
+	<form method="post">
+		<label for="fileUpload">Selecteer je afbeelding</label>
+		<input type="file" id="fileUpload" accept="image/png, image/jpeg">
+		<button type="submit" class="fdnd-button">Uploaden</button>
+	</form>
 
-			<!-- Hint: Denk niet te ingewikkeld -->
+	<details open>
+		<summary>Demo video</summary>
+		<video src="assets/file.mp4" width="1496" height="496" controls muted autoplay loop>
+			<a href="assets/file.mp4">assets/file.mp4</a>
+		</video>
+	</details>
+</body>
 
-			<button type="submit" class="fdnd-button">Uploaden</button>
-
-		</form>
-
-		<details open>
-			<summary>Demo video</summary>
-			<video src="assets/file.mp4" width="1496" height="496" controls muted autoplay loop>
-				<a href="assets/file.mp4">assets/file.mp4</a>
-			</video>
-		</details>
-	</body>
 </html>
