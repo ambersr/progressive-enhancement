@@ -37,31 +37,27 @@
 			box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 		}
 
-		.switcher:checked::thumb {
-			translate: 2.8em 0;
-		}
+		@supports selector(::thumb) {
+			.switcher::before {
+				display: none;
+			}
 
-		.switcher::thumb,
-		.switcher::track {
-			grid-area: 1/1;
-		}
+			.switcher::after {
+				content: '';
+				height: 1.4em;
+				translate: 15% 0;
+				transition: .1s ease;
+			}
 
-		.switcher::before {
-			content: 'uit';
-			translate: 60% 0;
-		}
+			.switcher:checked::after {
+				content: 'aan';
+				translate: 57% 0;
+				transition: .2s ease-out;
+			}
 
-		.switcher:checked::before {
-			content: 'aan';
-			translate: 15% 0;
-		}
-
-		@supports not selector(::thumb) {
-			.switcher:checked::before {
-				left: 3.1em;
-				content: "aan";
-				font-weight: 800;
-				translate: unset;
+			/* Wanneer de switcher aan staat verander dan de background-color */
+			.switcher:checked {
+				background-color: #67e5bf;
 			}
 
 			.switcher::before {
