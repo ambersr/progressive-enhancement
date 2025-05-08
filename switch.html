@@ -20,18 +20,27 @@
 			cursor: pointer;
 		}
 
-		/* Wanneer de switcher aan staat verander dan de background-color */
-		.switcher:checked {
-			background-color: #67e5bf;
+		.switcher:checked::before {
+			left: 3.1em;
+			content: "aan";
 		}
 
-		.switcher::thumb {
+		.switcher:checked {
+			background-color:#68e4bf;
+		}
+
+		.switcher::before {
+			content: "";
+			display: flex;
+			align-items: center;
+			justify-content: center;
 			width: 2.5em;
 			height: 2.5em;
 			background: white;
 			position: absolute;
 			top: .25em;
 			left: .3em;
+			font-weight: 800;
 			border-radius: 50%;
 			transition: 0.3s;
 			box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
@@ -60,11 +69,7 @@
 				background-color: #67e5bf;
 			}
 
-			.switcher::before {
-				content: "";
-				display: flex;
-				align-items: center;
-				justify-content: center;
+			.switcher::thumb {
 				width: 2.5em;
 				height: 2.5em;
 				background: white;
@@ -74,7 +79,15 @@
 				border-radius: 50%;
 				transition: 0.3s;
 				box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-				translate: unset;
+			}
+
+			.switcher:checked::thumb {
+				translate: 2.8em 0;
+			}
+
+			.switcher::thumb,
+			.switcher::track {
+				grid-area: 1/1;
 			}
 		}
 	</style>
